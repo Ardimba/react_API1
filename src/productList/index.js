@@ -1,30 +1,30 @@
-import React,{useState,useEffect} from "react"
-import './style.css'
+import React,{useState,useEffect} from "react";
+import './style.css';
 // import { Link } from "react-router-dom";
 const Product =()=>{
     const [products,setProducts]=useState([]);
-    const [loading,setLoading]=useState(false)
+    const [loading,setLoading]=useState(false);
     useEffect(()=>{
         (async()=>{
-            await getProduct()
+            await getProduct();
         })();
     }, [])
 
     const getProduct=async()=>{
         try{
             setLoading(true)
-            const response=await fetch('https://dummyjson.com/products')
+            const response=await fetch('https://dummyjson.com/products');
             const result=await response.json();
             setProducts(result.products);
-            setLoading(false)
+            setLoading(false);
         }
         catch(error){
-            console.log(error.message)
+            console.log(error.message);
         }
     };
         console.log({products});
         if(loading){
-            return <p>Loading...</p>
+            return <p>Loading...</p>;
     }
     return(
         <div className="container">
@@ -43,6 +43,6 @@ const Product =()=>{
             ))}
             </div>
         </div>
-    )
-}
-export default Product
+    );
+};
+export default Product;
