@@ -3,7 +3,7 @@ import './App.css';
 import Login from './LOGIN';
 import React, { useState } from 'react';
 // import AddProductForm from './AddProductForm';
-import { BrowserRouter as Route, Router,Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 // import ProductDetails from "./productDetails";
 
@@ -17,10 +17,10 @@ function App() {
   <Router>
     <Navbar>
       <Routes>
-        <Route path="./productList" element={<Product/>}/>
+        <Route path="/productList" element={<Product/>}/>
         <Route path="/login" element={<Login/>}/>
-        <Route path="/Login" element={<AddProductForm/>}/>
-        {/* <Route path="/productDetails" element={<ProductDetails/>}/> */}
+        <Route path="/addProduct" element={<AddProductForm/>}/>
+        <Route path="/productDetails" element={<ProductDetails/>}/>
       </Routes>
     </Navbar>
   </Router>
